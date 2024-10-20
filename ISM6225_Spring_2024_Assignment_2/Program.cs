@@ -61,7 +61,7 @@ namespace Assignment_2
         public static IList<int> FindMissingNumbers(int[] nums)
         {
             try
-            {
+            { // Implementing the algorithm to find missing numbers in an array
                 int n = nums.Length;
                 List<int> result = new List<int>();
                 for (int i = 0; i < n; i++)
@@ -79,7 +79,7 @@ namespace Assignment_2
                         result.Add(i + 1);
                     }
                 }
-                return result;
+                return result; // Returning the list of missing numbers
             }
             catch (Exception)
             {
@@ -91,7 +91,7 @@ namespace Assignment_2
         public static int[] SortArrayByParity(int[] nums)
         {
             try
-            {
+            { // Implementing the algorithm to sort an array by parity
                 List<int> EvenList = new List<int>();
             List<int> OddList = new List<int>();
 
@@ -108,7 +108,7 @@ namespace Assignment_2
             }
 
             EvenList.AddRange(OddList);
-            return EvenList.ToArray();
+            return EvenList.ToArray(); // Returning the sorted array
             }
             catch (Exception)
             {
@@ -120,14 +120,14 @@ namespace Assignment_2
         public static int[] TwoSum(int[] nums, int target)
         {
             try
-            {
+            { // Implementing the algorithm to find two sum
                 Dictionary<int, int> map = new Dictionary<int, int>();
                 for (int i = 0; i < nums.Length; i++)
                 {
                     int complement = target - nums[i];
                     if (map.ContainsKey(complement))
                     {
-                        return new int[] { map[complement], i };
+                        return new int[] { map[complement], i }; // Returning the indices of two sum
                     }
                     map[nums[i]] = i;
                 }
@@ -143,10 +143,10 @@ namespace Assignment_2
         public static int MaximumProduct(int[] nums)
         {
             try
-            {
+            { // Implementing the algorithm to find maximum product of three numbers
                 Array.Sort(nums);
                 int n = nums.Length;
-                return Math.Max(nums[n - 1] * nums[n - 2] * nums[n - 3], nums[0] * nums[1] * nums[n - 1]);
+                return Math.Max(nums[n - 1] * nums[n - 2] * nums[n - 3], nums[0] * nums[1] * nums[n - 1]); // Returning the maximum product
                 return 0; // Placeholder
             }
             catch (Exception)
@@ -159,7 +159,7 @@ namespace Assignment_2
         public static string DecimalToBinary(int decimalNumber)
         {
             try
-            {
+            { // Implementing the algorithm to convert decimal to binary
                 if (decimalNumber == 0) return "0";
                 string binary = "";
                 while (decimalNumber > 0)
@@ -167,7 +167,7 @@ namespace Assignment_2
                     binary = (decimalNumber % 2) + binary;
                     decimalNumber /= 2;
                 }
-                return binary;
+                return binary; // Returning the binary number 
             }
             catch (Exception)
             {
@@ -179,7 +179,7 @@ namespace Assignment_2
         public static int FindMin(int[] nums)
         {
             try
-            {
+            { // Implementing the algorithm to find minimum in rotated sorted array
                 int left = 0, right = nums.Length - 1;
                 while (left < right)
                 {
@@ -187,7 +187,7 @@ namespace Assignment_2
                     if (nums[mid] > nums[right]) left = mid + 1;
                     else right = mid;
                 }
-                return nums[left];
+                return nums[left]; // Returning the minimum element
             }
             catch (Exception)
             {
@@ -199,7 +199,7 @@ namespace Assignment_2
         public static bool IsPalindrome(int x)
         {
             try
-            {
+            { // Implementing the algorithm to check if a number is palindrome
                 if (x < 0 || (x != 0 && x % 10 == 0)) return false;
                 int revertedNumber = 0;
                 while (x > revertedNumber)
@@ -207,7 +207,7 @@ namespace Assignment_2
                     revertedNumber = revertedNumber * 10 + x % 10;
                     x /= 10;
                 }
-                return x == revertedNumber || x == revertedNumber / 10;
+                return x == revertedNumber || x == revertedNumber / 10; // Returning if the number is palindrome
                 return false; // Placeholder
 
             }
@@ -221,7 +221,7 @@ namespace Assignment_2
         public static int Fibonacci(int n)
         {
             try
-            {
+            { // Implementing the algorithm to find fibonacci number
                 if (n <= 1) return n;
                 int a = 0, b = 1;
                 for (int i = 2; i <= n; i++)
@@ -230,7 +230,7 @@ namespace Assignment_2
                     a = b;
                     b = c;
                 }
-                return b;
+                return b; // Returning the fibonacci number
             }
             catch (Exception)
             {
